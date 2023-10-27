@@ -15,10 +15,7 @@ export async function sleepHandler(app: FastifyInstance) {
             });
 
             const sleepInfo = sleepSchema.parse(request.body)
-
-            console.log(sleepInfo);
             
-
             await prisma.sleep.create({
                 data: {
                     startTime: sleepInfo.startTime,
