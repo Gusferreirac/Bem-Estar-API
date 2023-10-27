@@ -5,7 +5,6 @@ import { z } from 'zod';
 export async function logInHandler(app: FastifyInstance) {
     app.post('/login', async (request, reply) => {
         if (!request.body) return reply.status(400).send('Bad Request');
-        console.log(request.body);
         
         try {
             const userSchema = z.object({
